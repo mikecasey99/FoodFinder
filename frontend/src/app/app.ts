@@ -4,11 +4,11 @@ import { Navbar } from "./navbar/navbar";
 import { FoodDisplay } from './food-display/food-display';
 import { UserMeals } from './user-meals/user-meals';
 import { CurrentFood } from './current-food/current-food';
-import { ButtonTest } from './button-test/button-test'; 
+import { Toast } from './toast/toast'; 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FoodDisplay, CurrentFood, UserMeals, Navbar, ButtonTest],
+  imports: [RouterOutlet, FoodDisplay, CurrentFood, UserMeals, Navbar, Toast],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

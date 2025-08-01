@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HotToastService } from '@ngxpert/hot-toast'; 
 
 
 
 @Component({
-  selector: 'app-button-test',
+  selector: 'app-toast',
   imports: [],
-  standalone: true,
-  templateUrl: './button-test.html',
-  styleUrl: './button-test.css'
+  templateUrl: './toast.html',
+  styleUrl: './toast.css'
 })
-export class ButtonTest {
+export class Toast {
   constructor(private toast: HotToastService) {}
+  
+  @Output() toastClicked = new EventEmitter<void>();
   
   addToMyMeals() {
     this.toast.success('Meal added to favorites!', {
@@ -22,5 +23,6 @@ export class ButtonTest {
       },
       position: 'bottom-right'
     });
+    this.toastClicked.emit();
   }
 }
